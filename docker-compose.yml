@@ -1,0 +1,26 @@
+services:
+  kuro-ronin:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kuro-ronin:latest
+    pull_policy: build
+    container_name: kuro-ronin
+    restart: unless-stopped
+    network_mode: host
+    stdin_open: true
+    tty: true
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      # Persistent configuration and state
+      - penterep_data:/root/.penterep
+
+volumes:
+  penterep_data:
+    name: kuro-ronin-data

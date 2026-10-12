@@ -1,0 +1,23 @@
+# Environment & Secrets
+.env
+*.env.local
+
+# Persistent container data & state
+data/
+.penterep/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Logs & temp
+*.log
+.DS_Store
